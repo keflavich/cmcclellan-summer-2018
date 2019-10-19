@@ -5,6 +5,7 @@ colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
 from collections import OrderedDict
 
 def colorcolor_plot(xfreq, x_flux, x_err, yfreq, y_flux, y_err, numfreq, num_flux, num_err):
+    plt.clf()
     xgood = [x_flux[i]>x_err[i] for i in range(len(x_flux))]
     ygood = [y_flux[i]>y_err[i] for i in range(len(y_flux))]
     good = [a and b for a, b in zip(xgood, ygood)]
@@ -28,10 +29,10 @@ def colorcolor_plot(xfreq, x_flux, x_err, yfreq, y_flux, y_err, numfreq, num_flu
     plt.legend(label.values(), label.keys())
     plt.title('Color v. Color for Sources in W51 IRS2')
     #plt.show()
-    plt.savefig('/users/bmcclell/nrao/documentation/colorcolor/colorcolor_IRS2_{}div{}{}.png'.format(numfreq, xfreq, yfreq), overwrite=True)
-    
+    plt.savefig('/Users/adam/work/w51/alma/mcclellan/cmcclellan-summer-2018/figures/colorcolor/colorcolor_IRS2_{}div{}{}.png'.format(numfreq, xfreq, yfreq), overwrite=True)
 
-table = Table.read('/users/bmcclell/nrao/cat/w51IRS2_photometered.dat', format='ascii')
+
+table = Table.read('/Users/adam/work/w51/alma/mcclellan/cmcclellan-summer-2018/cat/w51IRS2_photometered.dat', format='ascii')
 ind = [table['rejected']==0]
 xflux = table['226.4GHz_Ellipse_sum'][ind]
 xerr = table['226.4GHz_Annulus_rms'][ind]
