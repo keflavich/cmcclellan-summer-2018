@@ -84,3 +84,4 @@ pl.legend(loc='best')
 pl.subplots_adjust(hspace=0.3)
 
 pl.savefig('/Users/adam/work/w51/alma/mcclellan/cmcclellan-summer-2018/figures/flux_histograms_with_imf_models.png')
+pl.savefig('/Users/adam/work/w51/alma/mcclellan/cmcclellan-summer-2018/figures/flux_histograms_with_imf_models.pdf')
